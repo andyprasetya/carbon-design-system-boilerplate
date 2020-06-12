@@ -35,6 +35,6 @@
   "dependencies": {
     "crypto-js": "latest",
     "date-fns": "latest",
-    "numeral": "latest",
+    "numeral": "latest"
   }
 }
