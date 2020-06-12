@@ -1,0 +1,40 @@
+{
+  "name": "carbon-design-system-boilerplate",
+  "version": "1.0.0",
+  "description": "A Carbon Design System (IBM) and Rollup boilerplate for webapps",
+  "main": "rollup.config.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyprasetya/carbon-design-system-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "andyprasetya@opense7en.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andyprasetya/carbon-design-system-boilerplate/issues"
+  },
+  "homepage": "https://github.com/andyprasetya/carbon-design-system-boilerplate#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "latest",
+    "@rollup/plugin-json": "latest",
+    "@rollup/plugin-node-resolve": "latest",
+    "autoprefixer": "latest",
+    "node-sass": "latest",
+    "npm-run-all": "latest",
+    "rollup": "latest",
+    "rollup-plugin-postcss": "latest",
+    "rollup-plugin-terser": "latest",
+    "serve": "latest"
+  },
+  "dependencies": {
+    "crypto-js": "latest",
+    "date-fns": "latest",
+    "numeral": "latest",
+  }
+}
