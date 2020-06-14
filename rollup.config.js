@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import postcss from 'rollup-plugin-postcss';
 import sass from 'node-sass';
 import autoprefixer from 'autoprefixer';
@@ -29,6 +30,9 @@ export default [
         sourceMap: true,
         extract: true,
         extensions: ['.sass','.scss','.css']
+      }),
+      injectProcessEnv({
+        NODE_ENV: 'development'
       }),
       production && terser()
     ]
