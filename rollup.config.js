@@ -1,12 +1,14 @@
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import globals from 'rollup-plugin-node-globals';
+import builtins from 'rollup-plugin-node-builtins';
+import resolve from '@rollup/plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import postcss from 'rollup-plugin-postcss';
 import sass from 'node-sass';
 import autoprefixer from 'autoprefixer';
 
-const production = !process.env.ROLLUP_WATCH;
+const production = !process.env.ROLLUP_WATCH; 
 
 export default [
   {
@@ -19,6 +21,14 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
+      builtins(),
+      globals(),
+      babel({
+        babelHelpers: 'bundled',
+        plugins: [
+          '@babel/plugin-syntax-dynamic-import'
+        ]
+      }),
       postcss({
         preprocessor: (content, id) => new Promise((resolve, reject) => {
           const result = sass.renderSync({ file: id });
@@ -30,9 +40,6 @@ export default [
         sourceMap: true,
         extract: true,
         extensions: ['.sass','.scss','.css']
-      }),
-      injectProcessEnv({
-        NODE_ENV: 'development'
       }),
       production && terser()
     ]
