@@ -1,205 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head lang='en'>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='icon' href='./img/favicon.ico'>
-  <title>Title</title>
-  <link rel='stylesheet' href='./bundle.css'>
-</head>
-<body>
-  <nav class='navbar is-dark' role='navigation' aria-label='main navigation'>
-    <div class='navbar-brand'>
-      <a class='navbar-item' href='./'>
-        SIG Persampahan Kota Tegal
-      </a>
-  
-      <a role='button' class='navbar-burger burger' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample'>
-        <span aria-hidden='true'></span>
-        <span aria-hidden='true'></span>
-        <span aria-hidden='true'></span>
-      </a>
-    </div>
-  
-    <div id='navbarBasicExample' class='navbar-menu'>
-      <div class='navbar-start'>
-        <a class='navbar-item'>
-          Beranda
+  <head lang='en'>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='icon' href='./img/favicon.ico'>
+    <title>Title</title>
+    <link rel='stylesheet' href='./bundle.css'>
+  </head>
+  <body>
+    <nav class='navbar is-dark' role='navigation' aria-label='main navigation'>
+      <div class='navbar-brand'>
+        <a class='navbar-item' href='./'>
+          SIG Persampahan Kota Tegal
         </a>
-  
-        <a class='navbar-item'>
-          Data
+    
+        <a role='button' class='navbar-burger burger' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample'>
+          <span aria-hidden='true'></span>
+          <span aria-hidden='true'></span>
+          <span aria-hidden='true'></span>
         </a>
-  
-        <div class='navbar-item has-dropdown is-hoverable'>
-          <a class='navbar-link'>
-            Peta
-          </a>
-  
-          <div class='navbar-dropdown'>
-            <a class='navbar-item'>
-              Batas Wilayah Administrasi
-            </a>
-            <a class='navbar-item'>
-              TPS/TPA
-            </a>
+      </div>
+    
+      <div id='navbarBasicExample' class='navbar-menu'>
+        <div class='navbar-start'>
+        <div class='navbar-end'>
+          <div class='navbar-item'>
+            <div class='buttons'>
+              <a class='button is-primary'>
+                Log in
+              </a>
+            </div>
           </div>
         </div>
       </div>
+    </nav>
   
-      <div class='navbar-end'>
-        <div class='navbar-item'>
-          <div class='buttons'>
-            <a class='button is-primary'>
-              Log in
-            </a>
+    <div id='app'>
+        <section class="hero has-background-white-ter is-fullheight">
+          <div class="hero-body">
+            <div class="countainer">
+              <div class="colims is-centered">
+                <div column is-5-tablet is-4-desktop is-3-widescreen>
+                  <from action="POST" class="box">
+                    <h3 class="title is-3">Login</h3>
+                    
+                    <div class="field">
+                      <label for="" class="label">Email</label>
+                      <div class="control has-icons-left">
+                        <input type="email" placeholder="sig.546@gmail.com" class="input" required>
+                        <span class="icon is-mall is-left">
+                          <i class="fa fa-envelope"></i>
+                        </span>
+                      </div>
+                    </div>
+  
+                    <div class="filed">
+                      <label for="" class="label">Password</label>
+                      <div class="control has-icons-left">
+                        <input type="password" placeholder="*****************" class="input" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </div>
+                    </div>
+  
+                    <div class="field">
+                    <label for="" class="checkbox" id="label-remember-me" onclick="setCheckedState()">
+                      <input type="checkbox" id="checkbox-remember-me">
+                      Remember me
+                    </label>
+                    </div>
+  
+                    <div class="field">
+                      <a href="#">Forget Password</a>
+                    </div>
+                    <div class="field">
+                      <button class="button is-success">
+                        Login
+                      </button>
+                    </div>
+                  </from>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      
     </div>
-  </nav>
-
-  <div id='app'>
-<section class='section'>
-      <div class='container'>
-        <div class='columns'>
-          <div class='column'>
-            <div class='box'>
-              <article class='media'>
-                <div class='media-left'>
-                  <figure class='image is-64x64'>
-                    <h1 class='is-danger'>2A</h1>
-                  </figure>
-                </div>
-                <div class='media-content'>
-                  <div class='content'>
-                    <p>
-                      <strong>KSHI</strong>
-                      <br>
-                      Kubikasi Sampah Hari Ini
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class='column'>
-            <div class='box'>
-              <article class='media'>
-                <div class='media-left'>
-                  <figure class='image is-64x64'>
-                    <h1 class='is-danger'>2B</h1>
-                  </figure>
-                </div>
-                <div class='media-content'>
-                  <div class='content'>
-                    <p>
-                      <strong>KSBI</strong>
-                      <br>
-                      Kubikasi Sampah Bulan Ini
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-    </section>
-    <div class='container'>
-      <div class='columns'>
-        <div class='column'>
-          <div class='box'>
-            <article class='media'>
-              <div class='media-left'>
-                <figure class='image is-64x64'>
-                  <h1 class='is-danger'>2C</h1>
-                </figure>
-              </div>
-              <div class='media-content'>
-                <div class='content'>
-                  <p>
-                    <strong>Grafik</strong>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class='column'>
-          <div class='box'>
-            <article class='media'>
-              <div class='media-left'>
-                <figure class='image is-64x64'>
-                  <h1 class='is-danger'>2B</h1>
-                </figure>
-              </div>
-              <div class='media-content'>
-                <div class='content'>
-                  <p>
-                    <strong>Keterangan</strong>
-                    <br>
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th><abbr title="Position">No</abbr></th>
-                          <th>Kode</th>
-                          <th><abbr title="Played">Nama Kelurahan</abbr></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>1</th>
-                          <td><a>52341</a> </td>
-                          <td>Tunon</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-    </section>
-
-    <section>
-      <div class='column'>
-        <div class='box'>
-          <article class='media'>
-            <div class='media-left'>
-              <figure class='image is-64x64'>
-                <h1 class='is-danger'>2E</h1>
-              </figure>
-            </div>
-            <div class='media-content'>
-              <div class='content'>
-                <p>
-                  <strong>Keterangan</strong>
-                  <br>
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th><abbr title="Position">No</abbr></th>
-                        <th>Kode</th>
-                        <th><abbr title="Played">Nama Kelurahan</abbr></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>1</th>
-                        <td><a>52341</a> </td>
-                        <td>Tunon</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-  </div>
-  <script src='./bundle.js'></script>
-</body>
-</html>
+    <script src='./bundle.js'></script>
+  </body>
+   </html>
