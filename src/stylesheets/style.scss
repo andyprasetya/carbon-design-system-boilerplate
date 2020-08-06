@@ -11,3 +11,9 @@
 html {
   overflow-y: auto;
 }
+
+#map {
+  margin-top: 52px;
+  width: 100%;
+  height: calc(100vh - 52px);
+}
